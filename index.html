@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HRMS</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Highlight.js CSS for code syntax (Dark Theme) -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+
+  <!-- lcoal CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({
+        publicKey: "wWxeHfqE3rs6Ob8oC",
+      });
+    })();
+  </script>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="70" tabindex="0">
+  <!-- Navbar -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-glass shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#" id="logo">Human-Resource Management System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#overview">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#codeSamples">Code Samples</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#demo">Demo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#employeeDirectory">Employee Directory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container pt-4 pb-5">
+    <!-- Overview Section -->
+    <section id="overview" class="mb-5">
+      <h2>Project Overview</h2>
+      <p class="lead">
+        This Human Resource Management System is a robust C++ console
+        application designed to streamline HR processes including employee
+        management, attendance tracking, payroll, and performance
+        evaluations. The project showcases effective use of C++
+        programming principles like OOP, file handling, and modular
+        design.
+      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80"
+            alt="HR Management Concept" class="img-fluid rounded shadow" />
+        </div>
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Language:</strong> C++
+            </li>
+            <li class="list-group-item">
+              <strong>Type:</strong> Console Application
+            </li>
+            <li class="list-group-item">
+              <strong>Target Users:</strong> HR Departments
+            </li>
+            <li class="list-group-item">
+              <strong>Design:</strong> Modular & Extensible
+            </li>
+            <li class="list-group-item">
+              <strong>Development Tools:</strong> Visual Studio / GCC
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="mb-5">
+      <h2>Key Features</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Employee CRUD Operations
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Attendance Tracking & Reports
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Automated Payroll Calculations
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Performance Reviews & Feedback
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Secure Role-Based Access
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Console UI with Menu Navigation
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>File Handling for Persistent Storage
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Modular Code Structure
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Input Validation & Error Handling
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Extensible Architecture
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- code lies here -->
+    <section id="codeSamples" class="mb-5">
+      <h2>Code Samples</h2>
+
+      <h5>Employee Class</h5>
+      <pre><code class="cpp">
+class Employee {
+public:
+    char empID[10];
+    char empName[20];
+    char empPassword[20];
+    char empContactNo[20];
+    char empType[10];
+    char empEmail[30];
+    char empAddress[50];
+    char empDOB[12];
+    char empGender[10];
+    char empDepartment[20];
+    char empJoinDate[12];
+    char empStatus[10];
+
+    int daysPresent;
+    char lastSalaryMonth[15];
+
+};
+  </code></pre>
+
+      <h5>Generate Monthly Salaries for All Employees</h5>
+      <pre><code class="cpp">
+void generateAllMonthlySalaries() {
+    Employee emp;
+    fstream fin("EMPLOYEE.dat", ios::in | ios::out | ios::binary);
+
+    while (fin.read((char*)&emp, sizeof(emp))) {
+        emp.autoGenerateMonthlySalary();
+
+        int pos = fin.tellg() - (int)sizeof(emp);
+        fin.seekp(pos);
+        fin.write((char*)&emp, sizeof(emp));
+    }
+
+    fin.close();
+}
+  </code></pre>
+
+      <h5>Mark Attendance</h5>
+      <pre><code class="cpp">
+void markAttendance(const char* id) {
+    fstream f("EMPLOYEE.dat", ios::in | ios::out | ios::binary);
+    Employee e;
+
+    while (f.read((char*)&e, sizeof(e))) {
+        if (strcmp(e.empID, id) == 0) {
+            e.daysPresent++;
+
+            int pos = f.tellg() - (int)sizeof(e);
+            f.seekp(pos);
+            f.write((char*)&e, sizeof(e));
+            break;
+        }
+    }
+
+    f.close();
+}
+  </code></pre>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="mb-5">
+      <h2>Project Demo</h2>
+      <p>
+        The full project runs as a console application. You can download
+        the source code and build it locally using your preferred C++
+        compiler or IDE.
+      </p>
+      <button href="" id="downloadBtn" class="btn btn-primary me-3">
+        <a href="main.cpp" download>Download Source Code</a>
+      </button>
+      <button id="openDemoBtn" class="btn btn-secondary" type="button" data-bs-toggle="modal"
+        data-bs-target="#demoModal">
+        Watch Demo Video
+      </button>
+    </section>
+
+    <!-- Employee Directory Section -->
+    <section id="employeeDirectory" class="mb-5">
+      <h2>Interactive Employee Directory</h2>
+      <p>Search employees by name or ID. Click a row for details.</p>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search by name or ID"
+            aria-label="Search Employees" />
+        </div>
+        <div class="col-md-6 d-flex justify-content-end align-items-center">
+          <small class="text-muted">Showing <span id="resultCount">0</span> results</small>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-hover" id="employeeTable" aria-describedby="employeeDirectory">
+          <thead class="table-primary">
+            <tr>
+              <th scope="col" data-sort="id" style="cursor: pointer">
+                ID &#8597;
+              </th>
+              <th scope="col" data-sort="name" style="cursor: pointer">
+                Name &#8597;
+              </th>
+              <th scope="col">Position</th>
+              <th scope="col">Salary ($)</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+
+      <nav aria-label="Employee Table Pagination">
+        <ul class="pagination justify-content-center" id="pagination">
+
+        </ul>
+      </nav>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="mb-5">
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeadingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne"
+              aria-expanded="true" aria-controls="faqCollapseOne">
+              What language is the system built with?
+            </button>
+          </h3>
+          <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              The system is developed entirely in C++, utilizing
+              object-oriented programming and standard libraries.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeadingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+              Can I extend this project?
+            </button>
+          </h3>
+          <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, the modular architecture allows adding features such as
+              GUI, database integration, and advanced reporting.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeadingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+              How can I get the source code?
+            </button>
+          </h3>
+          <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              You can download the source code from the download section
+              above or contact me for more details.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="mb-5">
+      <h2>Contact</h2>
+      <p>
+        If you have questions or want to discuss the project, please fill
+        out the form below.
+      </p>
+      <form id="contactForm" novalidate>
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="nameInput name" required placeholder="Your full name"
+            aria-describedby="nameHelp" />
+
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+
+
+        <div class="mb-4">
+        </div>
+
+
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email address <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" id="emailInput email" required placeholder="name@example.com"
+            aria-describedby="emailHelp" />
+
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="messageInput" class="form-label">Message <span class="text-danger">*</span></label>
+
+          <div class="mb-4">
+            <textarea class="floatingTextArea form-control" placeholder="Your Message" id="message messageInput"
+              required></textarea>
+          </div>
+
+          <div class="invalid-feedback">Please enter a message.</div>
+        </div>
+        <button type="submit" onclick="sendMail()" class="btn mybtn bg-black text-white">Send Message</button>
+        <div id="formFeedback" class="mt-3" role="alert" aria-live="polite"></div>
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    &copy; 2025 HRMS. All rights reserved.
+  </footer>
+
+  <!-- Demo Video Modal -->
+  <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="demoModalLabel">
+            Project Demo Video
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo Video" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Employee Detail Modal -->
+  <div class="modal fade" id="employeeDetailModal" tabindex="-1" aria-labelledby="employeeDetailModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="employeeDetailModalLabel">
+            Employee Details
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="employeeDetailBody">
+          <!-- Employee details dynamically inserted -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Highlight.js JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <script src="main.js"></script>
+
+</body>
+
+</html>
